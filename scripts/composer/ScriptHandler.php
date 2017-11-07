@@ -52,11 +52,11 @@ class ScriptHandler {
     }
 
     // Create the files directory with chmod 0777
-    if (!$fs->exists($drupalRoot . '/sites/default/files')) {
+    if (!$fs->exists($drupalRoot . '/files')) {
       $oldmask = umask(0);
-      $fs->mkdir($drupalRoot . '/sites/default/files', 0777);
+      $fs->mkdir($drupalRoot . '/files', 0777);
       umask($oldmask);
-      $event->getIO()->write("Create a sites/default/files directory with chmod 0777");
+      $event->getIO()->write("Create a files directory with chmod 0777");
     }
   }
 
